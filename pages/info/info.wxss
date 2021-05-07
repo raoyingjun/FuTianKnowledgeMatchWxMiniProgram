@@ -1,0 +1,4 @@
+/* pages/info/info.wxss */
+.cell {
+  font-size: 32rpx
+}

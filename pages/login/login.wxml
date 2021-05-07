@@ -1,0 +1,29 @@
+<view class="wrap">
+  <view class="title">登录</view>
+  <form rules="{{rules}}" models="{{form}}" id="form" class="form">
+    <view class="input-item">
+      <image src="../../images/icons/username.png"></image>
+      <input
+        type="text" 
+        placeholder="请输入手机号" 
+        bindinput="inputChange"
+        data-field="username"></input>
+    </view>
+    <view class="input-item">
+      <image src="../../images/icons/password.png"></image>
+      <input 
+      type="password" 
+      placeholder="请输入密码"
+      bindinput="inputChange"
+      data-field="password"></input>
+    </view>
+    <view>
+      <button class="login-btn" bindtap="login"> 登录 </button>
+    </view>
+    <view class="links">
+      <view class="link" bindtap="toRegister">注册账号</view>
+      <text style="margin: 0 20rpx">|</text>
+      <view class="link" bindtap="toFindpwd">找回密码</view>
+    </view>
+  </form>
+</view>

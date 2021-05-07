@@ -1,0 +1,20 @@
+
+.banner {
+  width: 100%;
+  display: block;
+}
+
+.cell {
+  font-size: 32rpx
+}
+
+.btn {
+  margin-top: 100rpx;
+}
+.feedback {
+  background-color: transparent !important;
+  width: initial !important;
+  padding: initial !important;
+  font-weight: initial !important;
+  text-align: initial !important;
+}

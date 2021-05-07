@@ -1,0 +1,3 @@
+<view class="wrap">
+  <button class="intro-btn" bindtap="skip">{{num}} 跳过</button>
+</view>

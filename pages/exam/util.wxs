@@ -1,0 +1,12 @@
+module.exports.formatType = function (type) {
+  switch (type) {
+    case 'MULTI':
+      return '多选题'
+    case 'SINGLE':
+      return '单选题'
+    case 'TF':
+      return '判断题'
+    default:
+      break
+  }
+}

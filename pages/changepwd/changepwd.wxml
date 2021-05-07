@@ -1,0 +1,33 @@
+<view>
+  <mp-form rules="{{rules}}" models="{{form}}" id="form">
+    <mp-cells>
+      <mp-cell prop="oldPassword" title="原密码" show-error>
+        <input 
+          data-field="oldPassword"
+          class="weui-input" 
+          placeholder="请输入原密码" 
+          type="password" 
+          bindinput="inputChange"/>
+      </mp-cell>
+      <mp-cell prop="newPassword" title="新密码" show-error>
+        <input
+          data-field="newPassword" 
+          class="weui-input" 
+          placeholder="请输入新密码" 
+          type="password" 
+          bindinput="inputChange"/>
+      </mp-cell>
+      <mp-cell prop="confirmpassword" title="确认密码" show-error>
+        <input
+          data-field="confirmpassword" 
+          class="weui-input" 
+          placeholder="再次填写确认" 
+          type="password" 
+          bindinput="inputChange"/>
+      </mp-cell>
+    </mp-cells>
+    <view class="weui-btn-area">
+      <button class="btn" bindtap="login"> 修改 </button>
+    </view>
+  </mp-form>
+</view>

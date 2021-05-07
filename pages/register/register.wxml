@@ -1,0 +1,46 @@
+<view class="wrap">
+  <view class="title">注册</view>
+  <form rules="{{rules}}" models="{{form}}" id="form" class="form">
+    <view class="input-item">
+      <image src="../../images/icons/username.png"></image>
+      <input type="text" placeholder="请输入姓名" bindinput="inputChange"
+        data-field="username"></input>
+    </view>
+    <view class="input-item">
+      <image src="../../images/icons/phone.png"></image>
+      <input type="text" placeholder="请输入手机号" bindinput="inputChange"
+        data-field="phone"></input>
+    </view>
+    <view class="input-item">
+      <image src="../../images/icons/password.png"></image>
+      <input type="password" placeholder="请输入密码"
+        bindinput="inputChange" data-field="password"></input>
+    </view>
+    <view class="input-item">
+      <image src="../../images/icons/password.png"></image>
+      <input type="password" placeholder="再次输入密码"
+        bindinput="inputChange" data-field="twoPassword"></input>
+    </view>
+    <view class="input-item">
+      <image src="../../images/icons/dept.png"></image>
+      <picker
+        mode="multiSelector"
+        range="{{depts}}"
+        range-key="name"
+        value="{{selected}}" 
+        style="color: #808080;line-height: 100rpx;" 
+        bindchange="pickerChange"
+        bindcolumnchange="pickerColumnChange">
+        {{depts[0][selected[0]].name}}-{{depts[1][selected[1]].name}}
+        </picker>
+    </view>
+    <view>
+      <button class="register-btn" bindtap="register">注册</button>
+    </view>
+    <view style="text-align: center">
+      <view class="link" bindtap="toLogin">
+        已有账号？去登录
+      </view>
+    </view>
+  </form>
+</view>

@@ -1,0 +1,31 @@
+<swiper indicator-dots indicator-color="rgba(255, 255, 255, .5)" indicator-active-color="rgba(255, 255, 255, .9)" wx:if="{{carousels.length}}" autoplay interval="3000" circular previous-margin="30rpx" next-margin="30rpx">
+  <swiper-item wx:for="{{carousels}}">
+    <image src="{{item.url}}" mode="widthFix" />
+  </swiper-item>
+</swiper>
+<view class="types">
+  <view>
+    <view class="icon chusai"></view>
+    <text>热身赛</text>
+  </view>
+  <view>
+    <view class="icon fusai"></view>
+    <text>资格赛</text>
+  </view>
+</view>
+<view class="chapters">
+  <wxs src="./util.wxs" module="tool"/>
+  <navigator class="chapter {{item.type==='FIRST_EXAM'?'chusai':'fusai'}} {{((item.status==='PUBLISH')&&(item.scope==='GLOBAL'||item.canAttend))?'publish':'unpublish'}}" wx:for="{{chapters}}" wx:key="cid" bindtap="toExam" data-index="{{index}}">
+    <view class="title">{{item.name}}
+    </view>
+    <view class="time">{{tool.formatDate(item.startTime)}} 至 {{tool.formatDate(item.endTime)}}</view>
+    <view class="meta">
+      <text>满分：{{item.examChapterData.totalScore}}分</text>
+      <text>单选{{item.examChapterData.singleSize}}道/多选{{item.examChapterData.multiSize}}道/判断{{item.examChapterData.tfSize}}道/共{{item.examChapterData.totalSize}}道</text>
+    </view>
+    <view class="meta">
+      <text>考试限时：{{item.examTime}}分钟</text>
+      <text>共可答{{item.total}}次，已答{{item.used}}次</text>
+    </view>
+  </navigator>
+</view>

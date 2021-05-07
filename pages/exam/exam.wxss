@@ -1,0 +1,78 @@
+mp-checkbox {
+  font-size: 26rpx;
+  font-weight: normal;
+}
+
+.header {
+  margin: 30rpx;
+  font-size: 32rpx;
+}
+
+.header-info {
+  float: left;
+  color: #f73131;
+  border-bottom: 8rpx solid #f73131;
+  
+}
+
+.header-timer {
+  float: right;
+  color: #636363
+}
+
+.mini-btn {
+  font-weight: normal;
+}
+
+
+
+.mini-btn {
+  font-size: 26rpx;
+  display: inline;
+  padding: 0;
+  color: rgb(119, 119, 119);
+}
+
+.msg {
+  font-size: 26rpx;
+  margin: 20rpx 40rpx;
+}
+
+.correct {
+  background-color: rgb(223, 255, 223);
+  border: 1px solid rgb(0, 204, 0)
+}
+
+.error {
+  background-color: #ffe3e3;
+  border: 1px solid #ff5f5f
+}
+
+.disabled {
+  pointer-events: none
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  margin: 100rpx 0;
+  margin-top: 50rpx;
+}
+
+.btn {
+  width: 40%;
+  padding: 15rpx 0;
+}
+
+.btn.plain {
+  background-image: none;
+  background-color: #fff4f4;
+  border: 1px solid #f73131;
+  box-sizing: border-box;
+  color: #f73131;
+}
+
+.weui-btn-area {
+  display: flex;
+}

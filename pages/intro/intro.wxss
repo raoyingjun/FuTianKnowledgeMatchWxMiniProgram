@@ -1,0 +1,23 @@
+.wrap {
+  position: absolute;
+  left: 0; right: 0;
+  top: 0; bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://game.kingdreamstudio.com:9148/image/guide.jpg")
+}
+
+.intro-btn {
+  position: absolute;
+  top: 30rpx; 
+  right: 30rpx;
+  width: 100rpx !important;
+  line-height: 40rpx;
+  font-weight: inherit;
+  padding: 5rpx 10rpx;
+  background-color: #f7313188;
+  color: white;
+  border-radius: 12px;
+  font-size: 24rpx;
+  border: 1px solid #f73131
+}

@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/intro/intro",
+    "pages/index/index",
+    "pages/myscore/myscore",
+    "pages/deptscore/deptscore",
+    "pages/everyonescore/everyonescore",
+    "pages/my/my",
+    "pages/login/login",
+    "pages/findpwd/findpwd", 
+    "pages/register/register",
+    "pages/exam/exam",
+    "pages/info/info",
+    "pages/changepwd/changepwd"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ff4747",
+    "navigationBarTitleText": "党员知识竞赛"
+  },
+  "tabBar": {
+    "color": "#cdcdcd",
+    "selectedColor": "#ff4747",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icons/home.png",
+        "selectedIconPath": "images/icons/home_active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/icons/my.png",
+        "selectedIconPath": "images/icons/my_active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

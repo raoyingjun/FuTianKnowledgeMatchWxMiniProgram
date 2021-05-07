@@ -1,0 +1,66 @@
+.header {
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.header-item {
+  width: 50%;
+  height: 100%;
+  float: left;
+  font-size: 32rpx;
+  transition: font-size 200ms;
+}
+
+.active {
+  border-bottom: 3px solid #ff4747;
+  font-size: 36rpx;
+}
+
+.row {
+  padding: 10px 0;
+  font-size: 24rpx;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.row.row-header {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.col {
+  width: 20%;
+  box-sizing: border-box;
+  padding: 0 10rpx;
+  float: left;
+}
+
+.col-btn {
+  width: 70%;
+  line-height: 45rpx;
+  color: white;
+  border-radius: 6rpx;
+  margin: 0 auto;
+}
+
+.col-btn-chusai {
+  background-color: #ffe0e0;
+  border: 1px solid #ff4747;
+  color: #ff4747;
+}
+
+.col-btn-fusai {
+  background-color: #ff4747;
+  border: 1px solid #df3737;
+  color: white;
+}
+
+
+.loading-msg {
+  text-align: center;
+  font-size: 26rpx;
+  color: #888888;
+  margin: 15rpx 0;
+}

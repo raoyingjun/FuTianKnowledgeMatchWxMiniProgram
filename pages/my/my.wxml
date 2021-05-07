@@ -1,0 +1,29 @@
+<mp-actionSheet bindactiontap="confirmLogout" show="{{actionSheetVisible}}"
+  actions="{{[{ text: '确定', type: 'warn', value: 1 }]}}" title="您确认退出吗?" />
+<view>
+  <image src="/images/banner.jpg" mode="widthFix" class="banner"></image>
+  <mp-cells>
+    <mp-cell value="个人信息" hover link url="../info/info" ext-class="cell">
+      <image slot="icon" src="/images/icons/my_info.png"
+        style="margin-right: 16px;vertical-align: middle;width:40rpx; height: 40rpx;" />
+    </mp-cell>
+    <mp-cell value="我的成绩" hover link url="../myscore/myscore" ext-class="cell">
+      <image slot="icon" src="/images/icons/my_score.png"
+        style="margin-right: 16px;vertical-align: middle;width:40rpx; height: 40rpx;" />
+    </mp-cell>
+    <mp-cell value="修改密码" hover link url="../changepwd/changepwd" ext-class="cell">
+      <image slot="icon" src="/images/icons/change_pwd.png"
+        style="margin-right: 16px;vertical-align: middle;width:40rpx; height: 40rpx;" />
+    </mp-cell>
+    <button open-type="feedback" class="feedback">
+      <mp-cell value="意见反馈" hover link ext-class="cell">
+        <image slot="icon" src="/images/icons/feedback.png"
+          style="margin-right: 16px;vertical-align: middle;width:40rpx; height: 40rpx;" />
+      </mp-cell>
+    </button>
+    <mp-cell value="退出登录" hover link ext-class="cell" bindtap="logout">
+      <image slot="icon" src="/images/icons/logout.png"
+        style="margin-right: 16px;vertical-align: middle;width:40rpx; height: 40rpx;" />
+    </mp-cell>
+  </mp-cells>
+</view>

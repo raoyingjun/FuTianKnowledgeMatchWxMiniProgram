@@ -1,0 +1,12 @@
+
+module.exports.formatDate = function (time) {
+  var date = getDate(time);
+  var strDate = '';
+  strDate += date.getFullYear() + '/';
+  strDate += (date.getMonth() + 1) + '/';
+  strDate += date.getDate() + ' ';
+  strDate += (date.getHours() ? date.getHours() : '00') + ':';
+  strDate += (date.getMinutes() ? date.getMinutes() : '00') + ':';
+  strDate += (date.getSeconds() ? date.getSeconds() : '00');
+  return strDate;
+}

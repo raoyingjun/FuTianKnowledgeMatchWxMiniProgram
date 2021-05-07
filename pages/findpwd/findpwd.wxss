@@ -1,0 +1,65 @@
+.wrap {
+  background-image: url("http://bpic.588ku.com/back_pic/00/01/75/85560937096a16f.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0
+}
+
+.title {
+  font-size: 54rpx;
+  color: white;
+  text-align: center;
+  margin-top: 50rpx;
+}
+
+.form {
+  padding: 60rpx 0;
+  box-sizing: border-box;
+  width: 680rpx;
+  border-radius: 20rpx;
+  display: block;
+  margin: 50rpx auto;
+  background-color: #FFFFFF;
+  box-shadow: 0 10rpx 15rpx rgba(235, 142, 142, 0.26)
+}
+.input-item {
+  width: 90%;
+  border: 1px solid rgb(240, 240, 240);
+  height: 100rpx;
+  margin: 0 auto;
+  margin-bottom: 60rpx;
+  border-radius: 30rpx;
+}
+.input-item input {
+  height: 100%;
+}
+.input-item image {
+  width:40rpx; 
+  height: 40rpx; 
+  margin: 27rpx;
+  float: left;
+}
+
+.register-btn {
+  margin: 0 auto;
+  width: 90% !important;
+  font-weight: inherit;
+  color: white;
+  border-radius: 30rpx;
+  font-size: 30rpx;
+  background-image: linear-gradient(to right, #ff7474, #f73131);
+  line-height:64rpx;
+}
+
+.link {
+  /* background-color: red; */
+  text-align: center;
+  font-size: 28rpx;
+  color: rgb(107, 107, 107);
+  display: inline-block;
+  margin-top: 30rpx;
+}

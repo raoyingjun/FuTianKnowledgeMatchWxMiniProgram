@@ -1,0 +1,144 @@
+page {
+  padding: 0 30rpx;
+  padding-top: 20rpx
+}
+
+
+swiper image {
+  width: 100%; /* 图片宽高比锁定1:2 */
+  box-sizing: border-box;
+  padding: 10rpx;
+  border-radius: 50rpx;
+}
+
+.types {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 40rpx;
+  padding-top: 20rpx;
+  border-top: 1px solid rgb(228, 228, 228);
+  /* position: sticky;
+  top: 0 */
+}
+
+.types text {
+  vertical-align: middle;
+  font-size: 28rpx;
+  color: rgb(80, 80, 80);
+  margin-left: 10rpx;
+}
+
+.icon {
+  width: 40rpx;
+  display: inline-block;
+  border-radius: 50%;
+  height: 40rpx;
+  vertical-align: middle;
+}
+
+
+.icon.chusai {
+  background-color: #ffe0e0;
+  border: 1px solid #ff4747;
+}
+
+.icon.fusai {
+  background-color: #ff4747;
+  border: 1px solid #df3737;
+}
+
+.chapters {
+  margin-top: 20rpx;
+}
+
+.chapters .chapter{
+  width: 100%;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  color: white;
+  padding: 30rpx 40rpx;
+  box-sizing: border-box;
+  box-shadow: 0 10rpx 20rpx rgb(212, 212, 212);
+}
+
+
+.chapters .title {
+  font-size: 38rpx;
+}
+
+.chapters .time {
+  font-size: 26rpx;
+  margin-top: 10rpx;
+  margin-bottom: 30rpx;
+}
+
+.chapters .meta {
+  font-size: 24rpx;
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.chapter.chusai {
+  background-color: #ffe0e0;
+  border: 1px solid #ff4747;
+  color: #ff4747;
+}
+
+.chapter.fusai {
+  background-color: #ff4747;
+  border: 1px solid #df3737;
+  color: white;
+}
+
+.chapter {
+  overflow: hidden;
+  position: relative;
+}
+
+.chapter.publish::before {
+  position: absolute;
+  width: 200rpx;
+  height: 200rpx;
+  right: -110rpx;
+  top: -110rpx;
+  content: "";
+  display: block;
+  transform: rotate(45deg);
+  background-color: rgb(222, 255, 222);
+  border: 1px solid rgb(93, 202, 93);
+}
+
+.chapter.publish::after {
+  position: absolute;
+  font-size: 22rpx;
+  right: 6rpx;
+  top: 20rpx;
+  content: "已开放";
+  display: block;
+  color: rgb(56, 165, 56);
+}
+
+.chapter.unpublish::before {
+  position: absolute;
+  width: 200rpx;
+  height: 200rpx;
+  right: -110rpx;
+  top: -110rpx;
+  content: "";
+  display: block;
+  transform: rotate(45deg);
+  background-color: rgb(228, 228, 228);
+  border: 1px solid rgb(94, 94, 94);
+}
+
+.chapter.unpublish::after {
+  position: absolute;
+  font-size: 22rpx;
+  right: 6rpx;
+  top: 20rpx;
+  content: "未开放";
+  display: block;
+  color: rgb(94, 94, 94);
+}

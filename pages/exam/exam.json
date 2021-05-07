@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "mp-cells": "../../components/cells/cells",
+    "mp-cell": "../../components/cell/cell",
+    "mp-checkbox": "../../components/checkbox/checkbox",
+    "mp-checkbox-group": "../../components/checkbox-group/checkbox-group",
+    "mp-dialog": "../../components/dialog/dialog"
+  },
+  "navigationBarTitleText": "答题测验"
+}

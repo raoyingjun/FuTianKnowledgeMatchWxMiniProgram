@@ -1,0 +1,22 @@
+<view>
+  <mp-cells>
+    <mp-cell
+      value="手机号"
+      hover
+      ext-class="cell">
+      <text slot="footer">{{userInfo.phone}}</text>
+    </mp-cell>
+    <mp-cell
+      value="姓名"
+      hover
+      ext-class="cell">
+      <text slot="footer">{{userInfo.username}}</text>
+    </mp-cell>
+    <mp-cell
+      value="基层党组织"
+      hover
+      ext-class="cell">
+      <text slot="footer">{{userInfo.departmentName}}</text>
+    </mp-cell>
+  </mp-cells>
+</view>

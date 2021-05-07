@@ -1,0 +1,18 @@
+<view class="main">
+  <wxs src="./util.wxs" module="tool" />
+  <view class="row row-header">
+    <view class="col">排名</view>
+    <view class="col">姓名</view>
+    <view class="col">党组织</view>
+    <view class="col">得分</view>
+    <view class="col">用时</view>
+  </view>
+  <view class="row" wx:for="{{list}}">
+    <view class="col">{{index+1}}</view>
+    <view class="col">{{item.username}}</view>
+    <view class="col">{{item.departmentName}}</view>
+    <view class="col">{{item.score}}分</view>
+    <view class="col">{{tool.getTimeBySecond(item.time)}}</view>
+  </view>
+  <view class="loading-msg">{{loadingMsg}}</view>
+</view>
