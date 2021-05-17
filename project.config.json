@@ -4,7 +4,7 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": false,
+    "urlCheck": true,
     "es6": true,
     "enhance": false,
     "postcss": true,
@@ -41,7 +41,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.16.1",
-  "appid": "wx391273b8002f3546",
+  "appid": "wx71a2ceaa5bf1957b",
   "projectname": "党员知识竞赛",
   "debugOptions": {
     "hidedInDevtools": []

@@ -72,7 +72,7 @@ Page({
     name
   }) {
     wx.setNavigationBarTitle({
-      title: '该竞赛前百名成绩-' + name,
+      title: '教育工委分数榜-' + name,
     })
     this.setData({
       cid

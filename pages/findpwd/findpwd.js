@@ -154,8 +154,8 @@ Page({
       departmentId: ''
     },
     depts: [
-      [{name: '原账户部门'}],
-      [{name: '原账户子部门'}]
+      [{name: '原账户党组织'}],
+      [{name: '原账户子党组织'}]
     ],
     selected: [0, 0]
   },

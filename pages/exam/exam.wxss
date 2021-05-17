@@ -76,3 +76,12 @@ mp-checkbox {
 .weui-btn-area {
   display: flex;
 }
+
+.weui-cells__title {
+  font-size: 36rpx;
+  color: black
+}
+
+radio-group view, checkbox-group view{
+  font-size: 32rpx !important;
+}

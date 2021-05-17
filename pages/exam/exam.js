@@ -6,7 +6,9 @@ const OPTIONS = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 Page({
   back() {
     wx.disableAlertBeforeUnload()
-    wx.navigateBack()
+    wx.reLaunch({
+      url: '/pages/index/index',
+    })
   },
   showResult(title, userScore, usedTime) {
     const that = this
@@ -58,7 +60,7 @@ Page({
     const that = this
     wx.showModal({
       title: '提示',
-      content: '确认提交吗？您是否需要再检查一下您的答案？',
+      content: '确认提交吗？',
       confirmText: '确认提交',
       cancelText: '我再想想',
       success(res) {
@@ -94,8 +96,9 @@ Page({
   isRight() {
     var items = this.data.question.answers
     for (var i = 0, len = items.length; i < len; i++) {
-      if (items[i].checked && items[i].status === 'ERROR') return false
+      if ((items[i].checked && (items[i].status === 'ERROR')) || (!items[i].checked && (items[i].status === 'RIGHT'))) return false
     }
+    console.log('g')
     return true
   },
   getChoosedSize() {
@@ -188,12 +191,6 @@ Page({
   },
   /** 下一题 */
   next() {
-    if (!this.isSelected()) {
-      return
-    }
-    if (!this.data.questions[this.data.current + 1]) {
-      this.appendQA()
-    }
     this.setData({
       question: this.data.questions[this.data.current + 1],
       current: this.data.current + 1
@@ -225,6 +222,14 @@ Page({
       'question.answers': checkboxItems
     });
   },
+  formatRightAnswer() {
+    var msg = []
+    var items = this.data.question.answers
+    for (var i = 0, len = items.length; i < len; i++) {
+      if (items[i].status === 'RIGHT') msg.push(OPTIONS[i])
+    }
+    return msg.join('、')
+  },
   /** 判断是否选择了答案，没选择则进行提示 */
   isSelected() {
     const choosedSize = this.getChoosedSize()
@@ -249,6 +254,26 @@ Page({
       }
       return true
     }
+  },
+  confirm() {
+    if (!this.isSelected()) {
+      return
+    }
+    if (!this.data.questions[this.data.current + 1]) {
+      this.appendQA()
+    }
+    let note = ''
+    if (this.isRight()) {
+      note += '恭喜你答对啦。'
+    } else {
+      note += '很抱歉，你答错了。'
+    }
+    console.log(this.formatRightAnswer());
+    note += '正确答案为' + this.formatRightAnswer()
+    this.setData({
+      'question.confirmed': true,
+      'question.note': note
+    })
   },
   getType() {
     switch (this.data.progress) {

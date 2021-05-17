@@ -70,7 +70,7 @@ Page({
     name
   }) {
     wx.setNavigationBarTitle({
-      title: '本部门前十名成绩-' + name,
+      title: '本基层党组织分数榜-' + name,
     })
     this.setData({
       cid

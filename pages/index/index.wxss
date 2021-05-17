@@ -3,12 +3,13 @@ page {
   padding-top: 20rpx
 }
 
+swiper {
+  border-radius: 12rpx;
+  overflow: hidden;
+}
 
 swiper image {
   width: 100%; /* 图片宽高比锁定1:2 */
-  box-sizing: border-box;
-  padding: 10rpx;
-  border-radius: 50rpx;
 }
 
 .types {
@@ -21,11 +22,14 @@ swiper image {
   top: 0 */
 }
 
-.types text {
+.types image {
+  width: 100rpx;
   vertical-align: middle;
-  font-size: 28rpx;
+}
+
+.types text {
+  font-size: 30rpx;
   color: rgb(80, 80, 80);
-  margin-left: 10rpx;
 }
 
 .icon {
@@ -63,17 +67,17 @@ swiper image {
 
 
 .chapters .title {
-  font-size: 38rpx;
+  font-size: 40rpx;
 }
 
 .chapters .time {
-  font-size: 26rpx;
+  font-size: 28rpx;
   margin-top: 10rpx;
   margin-bottom: 30rpx;
 }
 
 .chapters .meta {
-  font-size: 24rpx;
+  font-size: 26rpx;
   margin-top: 10rpx;
   display: flex;
   justify-content: space-between;
