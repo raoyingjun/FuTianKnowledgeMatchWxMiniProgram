@@ -37,6 +37,10 @@
   float: left;
 }
 
+.col-3 {
+  width: 33%;
+}
+
 .col-btn {
   width: 70%;
   line-height: 45rpx;

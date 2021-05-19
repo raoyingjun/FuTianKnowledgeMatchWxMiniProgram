@@ -7,20 +7,20 @@
   <view class="main">
     <wxs src="./util.wxs" module="tool"/>
     <view class="row row-header">
-      <view class="col">名称</view>
-      <view class="col">得分</view>
-      <view class="col">用时</view>
-      <view class="col">本基层党组织分数榜</view>
-      <view class="col">教育工委分数榜</view>
+      <view class="col {{isActive?'':'col-3'}}">名称</view>
+      <view class="col {{isActive?'':'col-3'}}">得分</view>
+      <view class="col {{isActive?'':'col-3'}}">用时</view>
+      <view class="col" wx:if="{{isActive}}">本基层党组织分数榜</view>
+      <view class="col" wx:if="{{isActive}}">教育工委分数榜</view>
     </view>
     <view class="row" wx:for="{{list}}">
-      <view class="col">{{item.chapterName}}</view>
-      <view class="col">{{item.score}}分</view>
-      <view class="col">{{tool.getTimeBySecond(item.time)}}</view>
-      <view class="col">
+      <view class="col {{isActive?'':'col-3'}}">{{item.chapterName}}</view>
+      <view class="col {{isActive?'':'col-3'}}">{{item.score}}分</view>
+      <view class="col {{isActive?'':'col-3'}}">{{tool.getTimeBySecond(item.time)}}</view>
+      <view class="col" wx:if="{{isActive}}">
         <navigator class="col-btn col-btn-chusai" url="../deptscore/deptscore?cid={{item.cid}}&name={{item.chapterName}}">查看</navigator>
       </view>
-      <view class="col">
+      <view class="col" wx:if="{{isActive}}">
         <navigator class="col-btn col-btn-fusai" url="../everyonescore/everyonescore?cid={{item.cid}}&name={{item.chapterName}}">查看</navigator>
       </view>
     </view>
