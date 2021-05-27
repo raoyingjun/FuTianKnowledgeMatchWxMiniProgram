@@ -1,7 +1,7 @@
 <view>
   <view class="header clearfix">
-    <view class="header-item {{isActive?'active':''}}" bindtap="toggleActive">热身赛</view>
-    <view class="header-item {{isActive?'':'active'}}" bindtap="toggleActive">资格赛</view>
+    <view class="header-item {{isActive?'active':''}}" bindtap="toggleActive" data-value="true">热身赛</view>
+    <view class="header-item {{isActive?'':'active'}}" bindtap="toggleActive" data-value="false">资格赛</view>
   </view>
   <!-- 名称，得分，用时，提交的时间 -->
   <view class="main">

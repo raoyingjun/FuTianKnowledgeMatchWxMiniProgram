@@ -47,9 +47,18 @@ Page({
       }
     })
   },
-  toggleActive: function () {
+  toggleActive: function (e) {
+    let value = e.currentTarget.dataset.value;
+    value = value === 'true'
+    // if (value) {
+    //   wx.showToast({
+    //     icon: 'none',
+    //     title: '热身赛成绩暂时无法查看',
+    //   })
+    //   return
+    // }
     this.setData({
-      isActive: !this.data.isActive,
+      isActive: value,
       list: [],
       currentPage: 1
     })
@@ -59,7 +68,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isActive: true, // t -> FIRST_EXAM, f -> REPEATED_EXAM
+    isActive: false, // t -> FIRST_EXAM, f -> REPEATED_EXAM
     loadingMsg: '',
     list: [],
     currentPage: 1

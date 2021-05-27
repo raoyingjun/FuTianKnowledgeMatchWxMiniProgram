@@ -31,18 +31,21 @@ Page({
     })
   },
   startTimer() {
-    this.setData({
-      timer: setInterval(() => {
-        this.setData({
-          currentTime: --this.data.currentTime,
-          currentTimeMsg: getTimeBySecond(this.data.currentTime)
-        })
-        if (this.currentTime <= 0) {
-          this.endTimer()
-          this.timeoutSubmit()
-        }
-      }, 1000)
-    })
+    if (this.data.currentTime <= 0) return
+    if (!this.data.timer) {
+      this.setData({
+        timer: setInterval(() => {
+          this.setData({
+            currentTime: --this.data.currentTime,
+            currentTimeMsg: getTimeBySecond(this.data.currentTime)
+          })
+          if (this.data.currentTime <= 0) {
+            this.endTimer()
+            this.timeoutSubmit()
+          }
+        }, 1000)
+      })
+    }
   },
   timeoutSubmit() {
     const that = this
@@ -72,6 +75,9 @@ Page({
   },
   endTimer() {
     clearInterval(this.data.timer)
+    this.setData({
+      timer: null
+    })
   },
   data: {
     currentTime: 0, // 当前时间，
@@ -126,10 +132,19 @@ Page({
     }
     return form
   },
+  failedSubmit() {
+    const that = this
+    wx.showModal({
+      title: '提示',
+      content: '提交时出错，原因可能是由于网络网络较差，请重试',
+      confirmText: '重试',
+      showCancel: false,
+      success(res) {
+        that.submit()
+      }
+    })
+  },
   submit() {
-    if (!this.isSelected()) {
-      return
-    }
     const that = this
     wx.showLoading({
       title: '正在提交...',
@@ -174,12 +189,9 @@ Page({
         }
       },
       fail() {
+        console.log('failed');
         wx.hideLoading()
-        wx.showToast({
-          title: '提交时出错，请重试',
-          icon: 'none',
-          duration: 2000
-        })
+        that.failedSubmit()
       }
     })
   },
@@ -259,9 +271,6 @@ Page({
     if (!this.isSelected()) {
       return
     }
-    if (!this.data.questions[this.data.current + 1]) {
-      this.appendQA()
-    }
     let note = ''
     if (this.isRight()) {
       note += '恭喜你答对啦。'
@@ -274,6 +283,9 @@ Page({
       'question.confirmed': true,
       'question.note': note
     })
+    if ((this.data.total !== this.data.current + 1) && (!this.data.questions[this.data.current + 1])) {
+      this.appendQA()
+    }
   },
   getType() {
     switch (this.data.progress) {
@@ -321,16 +333,27 @@ Page({
           })
         } else if (data.code === 200) {
           that.handleData(data.data)
+        } else {
+          wx.showToast({
+            title: data.message,
+            icon: 'none',
+            duration: 2000
+          })
+          that.setData({
+            'question.confirmed': false
+          })
         }
       },
       fail() {
         wx.hideLoading()
         wx.showToast({
-          title: '加载题目时出错，请重试',
+          title: '加载题目时出错，请返回重试',
           icon: 'none',
           duration: 2000
         })
-        that.prev()
+        that.setData({
+          'question.confirmed': false
+        })
       }
     })
   },
@@ -377,6 +400,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.startTimer()
     wx.hideHomeButton()
   },
 
@@ -384,7 +408,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    this.endTimer()
   },
 
   /**
@@ -407,7 +431,6 @@ Page({
   onReachBottom: function () {
 
   },
-
   /**
    * 用户点击右上角分享
    */
