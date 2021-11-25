@@ -36,7 +36,7 @@ Page({
           })
         } else {
           that.setData({
-            loadingMsg: '没有更多了'
+            loadingMsg: data.message
           })
         }
       },
@@ -50,6 +50,7 @@ Page({
   toggleActive: function (e) {
     let value = e.currentTarget.dataset.value;
     value = value === 'true'
+    if (this.data.isActive === value) return
     // if (value) {
     //   wx.showToast({
     //     icon: 'none',
