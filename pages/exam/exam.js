@@ -80,7 +80,8 @@ Page({
     })
   },
   data: {
-    currentTime: 0, // 当前时间，
+    currentTime: 0, // 当前剩余时间，
+    realCurrentTime: 0, // 真正的当前剩余时间
     current: 0, // 当前所在的题目的索引
     total: 0, // 总题数
     currentTimeMsg: '00:00:00', // 格式化后的已用时
@@ -365,13 +366,15 @@ Page({
     time,
     name,
     total,
-    totalScore
+    totalScore,
+    realTime,
   }) {
     cid = Number(cid)
     total = Number(total)
     time = Number(time)
+    realTime = Number(realTime)
     totalScore = Number(totalScore)
-    const currentTime = time * 60
+    const currentTime = parseInt(time * 60)
     wx.setNavigationBarTitle({
       title: name
     })
