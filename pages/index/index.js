@@ -1,6 +1,33 @@
 const REQUEST_URL = getApp().globalData.REQUEST_URL
 
 Page({
+  abortAutoRefreshChapterState() {
+    if (this.data.timer) {
+      clearInterval(this.data.timer)
+      this.setData({
+        timer: null
+      })
+    }
+  },
+  autoRefreshChapterState() {
+    const timer = setInterval(() => {
+      const chapters = this.data.chapters
+       chapters.forEach((chapter, index) => {
+        if (chapter.status==='PUBLISH') {
+          return chapter
+        }
+        if ((chapter.scope === 'GLOBAL') || chapter.canAttend) {
+          const now = Date.now()
+          if ((Date.parse(chapter.startTime) <= now) && (now <= Date.parse(chapter.endTime))) {
+            this.setData({
+              [`chapter[${index}].status`]:'PUBLISH'
+            })
+          }
+        }
+      })
+    }, 1000);
+    return timer
+  },
   toExam(e) {
     const index = e.currentTarget.dataset.index
     const chapter = this.data.chapters[index]
@@ -105,7 +132,8 @@ Page({
    */
   data: {
     chapters: [],
-    carousels: []
+    carousels: [],
+    timer: null
   },
 
   /**
@@ -126,13 +154,14 @@ Page({
    */
   onShow: function () {
     this.listChapter()
+    this.autoRefreshChapterState()
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    this.abortAutoRefreshChapterState()
   },
 
   /**
