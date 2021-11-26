@@ -4,7 +4,7 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "enhance": false,
     "postcss": true,
@@ -20,29 +20,31 @@
     "checkInvalidKey": true,
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
-    "compileHotReLoad": false,
+    "compileHotReLoad": true,
+    "lazyloadPlaceholderEnable": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
-    "useApiHostProcess": false,
+    "useApiHostProcess": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
     },
     "enableEngineNative": false,
-    "bundle": false,
     "useIsolateContext": true,
-    "useCompilerModule": true,
-    "userConfirmedUseCompilerModuleSwitch": false,
     "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true
+    "minifyWXSS": true,
+    "disableUseStrict": false,
+    "minifyWXML": true,
+    "showES6CompileOption": false,
+    "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
   "libVersion": "2.16.1",
-  "appid": "wx71a2ceaa5bf1957b",
-  "projectname": "党员知识竞赛",
+  "appid": "wx5b0dfc08e123c61c",
+  "projectname": "%E5%85%9A%E5%91%98%E7%9F%A5%E8%AF%86%E7%AB%9E%E8%B5%9B",
   "debugOptions": {
     "hidedInDevtools": []
   },
