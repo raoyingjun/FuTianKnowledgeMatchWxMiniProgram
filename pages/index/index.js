@@ -20,7 +20,7 @@ Page({
           const now = Date.now()
           if ((Date.parse(chapter.startTime) <= now) && (now <= Date.parse(chapter.endTime))) {
             this.setData({
-              [`chapter[${index}].status`]:'PUBLISH'
+              [`chapters[${index}].status`]:'PUBLISH'
             })
           }
         }
