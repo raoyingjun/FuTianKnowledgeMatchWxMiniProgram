@@ -347,7 +347,7 @@ Page({
       fail() {
         wx.hideLoading()
         wx.showToast({
-          title: '加载题目时出错，请返回重试',
+          title: '加载题目失败，可能是网络较差，请点击【确认】重试',
           icon: 'none',
           duration: 2000
         })
