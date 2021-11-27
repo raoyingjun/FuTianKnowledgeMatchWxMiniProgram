@@ -7,12 +7,12 @@
   <view>
     <image src="/images/icons/chusai.png" mode="widthFix"></image>
     <!-- <view class="icon chusai"></view> -->
-    <text>热身赛</text>
+    <text>预热赛</text>
   </view>
   <view>
     <image src="/images/icons/fusai.png" mode="widthFix"></image>
     <!-- <view class="icon fusai"></view> -->
-    <text>资格赛</text>
+    <text>初赛</text>
   </view>
 </view>
 <view class="chapters">

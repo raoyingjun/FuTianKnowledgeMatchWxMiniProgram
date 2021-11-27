@@ -4,7 +4,7 @@
   top: 0; bottom: 0;
   background-size: cover;
   background-position: center;
-  background-image: url("https://game.kingdreamstudio.com:9148/image/guide.jpg")
+
 }
 
 .intro-btn {

@@ -69,7 +69,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isActive: false, // t -> FIRST_EXAM, f -> REPEATED_EXAM
+    isActive: true, // t -> FIRST_EXAM, f -> REPEATED_EXAM
     loadingMsg: '',
     list: [],
     currentPage: 1
