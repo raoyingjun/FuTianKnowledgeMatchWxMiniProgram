@@ -55,6 +55,13 @@ swiper image {
   margin-top: 20rpx;
 }
 
+.chapters-title {
+  text-align: center;
+  font-size: 32rpx;
+  margin: 10px auto;
+  color: rgb(63, 63, 63);
+}
+
 .chapters .chapter{
   width: 100%;
   border-radius: 20rpx;
