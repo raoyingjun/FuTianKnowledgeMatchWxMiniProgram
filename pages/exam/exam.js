@@ -88,7 +88,8 @@ Page({
     cid: 0, // 章节编号
     questions: [], // 所有的题目
     question: {}, // 当前题目
-    progress: 0 // 当前请求的进度，分三步。0->单选题，1->多选题，2->判断题 
+    progress: 0, // 当前请求的进度，分三步。0->单选题，1->多选题，2->判断题 
+    type: ''
   },
   /** 处理返回的数据 */
   handleData(data) {
@@ -368,6 +369,7 @@ Page({
     total,
     totalScore,
     realTime,
+    type
   }) {
     cid = Number(cid)
     total = Number(total)
@@ -387,7 +389,8 @@ Page({
       total,
       time,
       totalScore,
-      currentTimeMsg: getTimeBySecond(currentTime)
+      currentTimeMsg: getTimeBySecond(currentTime),
+      type
     })
     this.appendQA()
   },

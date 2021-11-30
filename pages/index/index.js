@@ -53,7 +53,7 @@ Page({
       }
       const realExamTime = this.getRealExamTimeByMin(Date.parse(chapter.endTime), time)
       wx.reLaunch({
-        url: `/pages/exam/exam?cid=${cid}&time=${time}&name=${chapter.name}&total=${total}&totalScore=${totalScore}&realTime=${realExamTime}`,
+        url: `/pages/exam/exam?cid=${cid}&time=${time}&name=${chapter.name}&total=${total}&totalScore=${totalScore}&realTime=${realExamTime}&type=${chapter.type}`,
       })
     } else {
       wx.showModal({
