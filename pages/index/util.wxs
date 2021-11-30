@@ -10,3 +10,13 @@ module.exports.formatDate = function (time) {
   strDate += (date.getSeconds() ? date.getSeconds() : '00');
   return strDate;
 }
+
+var ExamTypeMap = {
+  EXECSICE: 'yusai',
+  FIRST_EXAM: 'chusai',
+  REPEATED_EXAM: 'fusai'
+}
+
+module.exports.getExamThemeClassByType = function (type){
+  return ExamTypeMap[type]
+}

@@ -17,7 +17,7 @@
 <view class="chapters-title">竞赛入口</view>
 <view class="chapters">
   <wxs src="./util.wxs" module="tool"/>
-  <navigator class="chapter {{item.type==='FIRST_EXAM'?'chusai':'fusai'}} {{((item.status==='PUBLISH')&&(item.scope==='GLOBAL'||item.canAttend))?'publish':'unpublish'}}" wx:for="{{chapters}}" wx:key="cid" bindtap="toExam" data-index="{{index}}">
+  <navigator class="chapter {{tool.getExamThemeClassByType(item.type)}} {{((item.status==='PUBLISH')&&(item.scope==='GLOBAL'||item.canAttend))?'publish':'unpublish'}}" wx:for="{{chapters}}" wx:key="cid" bindtap="toExam" data-index="{{index}}">
     <view class="title">{{item.name}}
     </view>
     <view class="time">{{tool.formatDate(item.startTime)}} 至 {{tool.formatDate(item.endTime)}}</view>

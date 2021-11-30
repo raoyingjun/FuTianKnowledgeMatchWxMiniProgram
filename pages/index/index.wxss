@@ -91,15 +91,21 @@ swiper image {
 }
 
 
-.chapter.chusai {
+.chapter.yusai {
   background-color: #ffe0e0;
   border: 1px solid #ff4747;
   color: #ff4747;
 }
 
-.chapter.fusai {
+.chapter.chusai {
   background-color: #ff4747;
   border: 1px solid #df3737;
+  color: white;
+}
+
+.chapter.fusai {
+  background-color: #ffa600;
+  border: 1px solid #d48a00;
   color: white;
 }
 
