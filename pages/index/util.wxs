@@ -12,7 +12,7 @@ module.exports.formatDate = function (time) {
 }
 
 var ExamTypeMap = {
-  EXECSICE: 'yusai',
+  EXERCISE: 'yusai',
   FIRST_EXAM: 'chusai',
   REPEATED_EXAM: 'fusai'
 }
