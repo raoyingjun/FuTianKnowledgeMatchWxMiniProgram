@@ -7,12 +7,14 @@ Page({
       loadingMsg: '加载中...',
     })
     wx.request({
-      url: `${REQUEST_URL}/user/exam/list/type/${this.data.isActive ? 'FIRST_EXAM' : 'REPEATED_EXAM' }/${this.data.currentPage}`,
+      url: `${REQUEST_URL}/user/exam/list/type/${this.data.isActive}/${this.data.currentPage}`,
       method: 'get',
       header: {
         Cookie: wx.getStorageSync('cookie')
       },
-      success: function ({data}) {
+      success: function ({
+        data
+      }) {
         if (data.code === 400) {
           wx.showModal({
             title: '提示',
@@ -49,7 +51,6 @@ Page({
   },
   toggleActive: function (e) {
     let value = e.currentTarget.dataset.value;
-    value = value === 'true'
     if (this.data.isActive === value) return
     // if (value) {
     //   wx.showToast({
@@ -69,7 +70,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isActive: true, // t -> FIRST_EXAM, f -> REPEATED_EXAM
+    isActive: 'EXERCISE',
+    examTypeMap: {
+      EXERCISE: '预赛',
+      FIRST_EXAM: '初赛',
+      REPEATED_EXAM: '复赛',
+    },
     loadingMsg: '',
     list: [],
     currentPage: 1

@@ -1,7 +1,10 @@
 <view>
   <view class="header clearfix">
-    <view class="header-item {{isActive?'active':''}}" bindtap="toggleActive" data-value="true">预赛</view>
-    <view class="header-item {{isActive?'':'active'}}" bindtap="toggleActive" data-value="false">初赛</view>
+    <view 
+      class="header-item {{isActive===index?'active':''}}"
+       bindtap="toggleActive" 
+       data-value="{{index}}"
+       wx:for="{{examTypeMap}}">{{item}}</view>>
   </view>
   <!-- 名称，得分，用时，提交的时间 -->
   <view class="main">
