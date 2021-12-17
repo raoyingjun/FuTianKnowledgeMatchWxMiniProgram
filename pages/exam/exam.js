@@ -81,7 +81,6 @@ Page({
   },
   data: {
     currentTime: 0, // 当前剩余时间，
-    realCurrentTime: 0, // 真正的当前剩余时间
     current: 0, // 当前所在的题目的索引
     total: 0, // 总题数
     currentTimeMsg: '00:00:00', // 格式化后的已用时
@@ -375,6 +374,10 @@ Page({
     total = Number(total)
     time = Number(time)
     realTime = Number(realTime)
+    console.log(realTime, time)
+    if (realTime < time) {
+      time = realTime
+    }
     totalScore = Number(totalScore)
     const currentTime = parseInt(time * 60)
     wx.setNavigationBarTitle({
@@ -406,6 +409,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    console.log('show');
     this.startTimer()
     wx.hideHomeButton()
   },
@@ -414,6 +418,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
+    console.log('hide');
     this.endTimer()
   },
 

@@ -51,6 +51,7 @@ Page({
         })
         return
       }
+      console.log(chapter);
       const realExamTime = this.getRealExamTimeByMin(Date.parse(chapter.endTime), time)
       wx.reLaunch({
         url: `/pages/exam/exam?cid=${cid}&time=${time}&name=${chapter.name}&total=${total}&totalScore=${totalScore}&realTime=${realExamTime}&type=${chapter.type}`,
